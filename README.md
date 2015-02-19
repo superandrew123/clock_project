@@ -1,7 +1,7 @@
 # clock_project
 
 Primary objective:
-Display a clock that delivers time dependent information on a series of women working in techonology.
+Display a clock that delivers time-dependent information on a series of notable women working in technology.
 
 Clock:
 
