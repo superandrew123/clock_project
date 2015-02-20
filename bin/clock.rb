@@ -5,8 +5,10 @@ class TickingClock
     y = "TEST"
     loop do
       sleep 1.0
-      $stdout.write Time.now.strftime("\r#{x} #{y}       %h %d %H:%M:%S       #{y} #{x}")
+      system "clear"      
+      $stdout.write Time.now.strftime("\r#{x} #{y}       %h %d %H:%M:%S       \n#{y} #{x}")
       i += 1
+
       if i % 2 == 0
         x = "BUTTS"
         y = "test"
