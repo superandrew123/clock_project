@@ -1,23 +1,31 @@
 class TickingClock
-  def self.start
-    i = 0
-    x = "butts"
-    y = "TEST"
+  def start
+    i = 1
     loop do
       sleep 1.0
       system "clear"      
-      $stdout.write Time.now.strftime("\r#{x} #{y}       %h %d %H:%M:%S       \n#{y} #{x}")
+      
       i += 1
 
       if i % 2 == 0
-        x = "BUTTS"
-        y = "test"
+        grace_clock
       else
-        x = "butts"
-        y = "TEST"
+        standard_clock
       end
     end
   end
+
+  def grace_clock
+    puts " ===================== "
+    $stdout.write Time.now.strftime("||%h %d %S:%M:%H     ||\n")
+    puts " ===================== "
+  end
+
+  def standard_clock
+    puts " ===================== "
+    $stdout.write Time.now.strftime("||%h %d %H:%M:%S     ||\n")
+    puts " ===================== "
+  end
 end
 
-TickingClock.start
+TickingClock.new.start
