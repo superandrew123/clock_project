@@ -10,4 +10,6 @@ Information about Women in technology:
 1. Grace Hopper
 2. Sandi Metz
 3. Anita Borg
+4. Ada Lovelace
+5. Katherine Johnson
 
