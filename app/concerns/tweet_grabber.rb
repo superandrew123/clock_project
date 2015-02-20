@@ -5,7 +5,7 @@ class TweetGrabber
 
   attr_accessor :search_term, :all
 
-  # FOR REST CLIENT (APP ONLY) CONFIGURATION ----- PLEASE DO NOT USE!!!
+  # REST CLIENT CONFIGURATION ----- PLEASE USE CAREFULLY SO I DONT GET BANNED!!!
   CLIENT = Twitter::REST::Client.new do |config|
   config.consumer_key        = "e24BRt5RyNT0HWwXZYNemgXoO"
   config.consumer_secret     = "my5zRI30lGUm7MIGHglHzYqqUnKdc89U1RqFq38eyYhIK7C603"
@@ -31,5 +31,11 @@ class TweetGrabber
     [self.all[rand(self.all.size)]]
   end
 
+  def pluck(num)
+    self.all[num]
+  end     
+
 end
+
+binding.pry
 
