@@ -6,3 +6,4 @@ gem 't'
 gem 'rspec'
 gem 'pry'
 
+gem 'wikipedia'
