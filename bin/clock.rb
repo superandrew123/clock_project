@@ -16,15 +16,15 @@ class TickingClock
   end
 
   def grace_clock
-    puts " ===================== "
-    $stdout.write Time.now.strftime("||%h %d %S:%M:%H     ||\n")
-    puts " ===================== "
+    puts "/=========================\\"
+    $stdout.write Time.now.strftime("|| %h %d       %S:%M:%H ||\n")
+    puts "\\=========================/"
   end
 
   def standard_clock
-    puts " ===================== "
-    $stdout.write Time.now.strftime("||%h %d %H:%M:%S     ||\n")
-    puts " ===================== "
+    puts "/=========================\\"
+    $stdout.write Time.now.strftime("|| %h %d %H:%M:%S       ||\n")
+    puts "\\=========================/"
   end
 end
 
