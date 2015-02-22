@@ -5,8 +5,9 @@ class GraceHopperTime
   end
 
   def initialize
+    @programmers = ['grace hopper', 'anita borg', 'sandi metz', 'ada lovelace', 'katherine johnson']
     @tweets = TweetGrabber.new
-    @tweets.populate('mixed', ['grace hopper', 'anita borg', 'sandi metz', 'ada lovelace', 'katherine johnson'])
+    @tweets.populate('mixed', @programmers)
     start
   end
 
