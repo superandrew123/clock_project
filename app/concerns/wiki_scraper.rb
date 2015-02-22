@@ -23,7 +23,7 @@ class WikiScraper
   end
 
   def random(name)
-    puts "#{self.all[name][rand(self.all.size)]} - #{name}"
+    puts "\"#{self.all[name][rand(self.all.size)]}\" - #{name}"
   end
 
 end
