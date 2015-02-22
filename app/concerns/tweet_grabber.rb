@@ -1,5 +1,3 @@
-require_relative '../../config/environment.rb'
-
 class TweetGrabber
 
 
@@ -11,15 +9,16 @@ class TweetGrabber
   config.consumer_secret     = "my5zRI30lGUm7MIGHglHzYqqUnKdc89U1RqFq38eyYhIK7C603"
   end
 
-  def initialize(search_term)
+  def initialize
     @client = CLIENT
-    @search_term = search_term
     @all = []
   end
 
-  def tweets(type = "mixed")
-    CLIENT.search(self.search_term, result_type: type, lang: "en").take(100).each do |tweet| 
-      self.all << tweet.text.split('http').first.strip
+  def populate(type = "mixed", search_terms)
+    search_terms.each do |term|
+      CLIENT.search(term, result_type: type, lang: "en").take(10).each do |tweet| 
+        self.all << tweet.text.split('http').first.strip
+      end
     end
   end
 
@@ -28,7 +27,7 @@ class TweetGrabber
   end
 
   def random
-    [self.all[rand(self.all.size)]]
+    self.all[rand(self.all.size)]
   end
 
   def pluck(num)
@@ -36,6 +35,3 @@ class TweetGrabber
   end     
 
 end
-
-binding.pry
-
