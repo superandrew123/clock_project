@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
 gem "rspec"
+gem "sinatra"
 gem "activerecord"
-gem "sqlite3"
+gem "sinatra-activerecord"
 gem "rake"
+gem "sqlite3"
 gem "database_cleaner"
 gem 'nokogiri'
 gem 'twitter'
