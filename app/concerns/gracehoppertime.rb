@@ -22,9 +22,9 @@ class GraceHopperTime
         @tweets.random
       else
         GraceClock.tock
+        @wikiquotes.print_intro(@programmers.sample)
         @wikiquotes.random(@programmers.sample)
       end
     end
   end
-
 end
