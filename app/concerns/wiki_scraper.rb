@@ -12,7 +12,6 @@ class WikiScraper
       html = open("https://en.wikiquote.org/wiki/"+"#{name.gsub(" ", "_")}")
       data = Nokogiri::HTML(html)
 
-      # intro = data.css("div#mw-content-text p:nth-child(2)").text
       @all[name] = data.css("div#mw-content-text ul li b").collect{|q| q.text.strip}
     end
 

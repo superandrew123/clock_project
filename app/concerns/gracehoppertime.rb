@@ -27,5 +27,4 @@ class GraceHopperTime
       end
     end
   end
-
 end
