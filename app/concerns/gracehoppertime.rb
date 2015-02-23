@@ -6,8 +6,8 @@ class GraceHopperTime
 
   def initialize
     @programmers = ['Grace Hopper', 'Ada Lovelace']
-    # @tweets = TweetGrabber.new.tap { |e| e.populate('mixed', @programmers) }
-    # @wikiquotes = WikiScraper.new.tap { |e| e.scrape(@programmers) }
+    @tweets = TweetGrabber.new.tap { |e| e.populate('mixed', @programmers) }
+    @wikiquotes = WikiScraper.new.tap { |e| e.scrape(@programmers) }
     start
   end
 
@@ -19,10 +19,10 @@ class GraceHopperTime
       i += 1
       if i % 2 == 0
         GraceClock.tick
-        # @tweets.random
+        @tweets.random
       else
         GraceClock.tock
-        # @wikiquotes.random(@programmers.sample)
+        @wikiquotes.random(@programmers.sample)
       end
     end
   end
