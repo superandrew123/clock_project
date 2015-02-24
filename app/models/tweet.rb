@@ -1,3 +1,3 @@
 class Tweet < ActiveRecord::Base
-  belongs_to :individual, inverse_of: :tweets
+  belongs_to :individual
 end

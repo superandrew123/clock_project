@@ -14,11 +14,18 @@ class TweetGrabber
   end
 
   def populate(type = "mixed", search_terms)
-    search_terms.each do |term|
-      CLIENT.search(term, result_type: type, lang: "en").take(10).each do |tweet| 
-        self.all << tweet.text.split('http').first.strip
-      end
+    # search_terms.each do |term|
+    #   CLIENT.search(term, result_type: type, lang: "en").take(10).each do |tweet| 
+    #     self.all << tweet.text.split('http').first.strip
+    #   end
+    # end
+    # The above was from when we were iterating through an array of women as search_terms.
+
+    # The below works to populate tweets for one individual, which fits with the current db:seeds setup.
+    CLIENT.search(search_terms, result_type: type, lang: "en").take(10).each do |tweet| 
+      self.all << tweet.text.split('http').first.strip
     end
+
   end
 
   def top(num=1)
