@@ -29,14 +29,8 @@ class WikiScraper
   # end
 
   def scrape_bio(name)
-    data = Nokogiri::HTML("https://en.wikiquote.org/wiki/#{name.gsub(" ", "_")}")
-
-    data.css ("div#mw-content-text p:nth-child(2)").text
-
+    data = Nokogiri::HTML(open("https://en.wikiquote.org/wiki/#{name.gsub(" ", "_")}"))
+    data.css("div#mw-content-text p:nth-child(2)").text
   end
 
 end
-
-
-# NONE of the Wikipedia stuff is working right now. I think there might be an access issue for our client.
-# Looking into other good sources for info scraping.

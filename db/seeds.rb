@@ -6,6 +6,7 @@ amazing_women = ["Grace Hopper", "Ada Lovelace", "Sandi Metz"] # To grow eventua
 amazing_women.each do |woman|
   w = Individual.create(name: woman)
   # Scrape bio source and add to Individual row.
+  w.bio = WikiScraper.new.scrape_bio(woman)
 
   # Scrape Twitter and collect tweets as Tweets in database.
   tweets = []
