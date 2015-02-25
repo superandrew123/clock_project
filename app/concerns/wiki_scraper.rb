@@ -1,4 +1,6 @@
 require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
 class WikiScraper
 
@@ -33,4 +35,7 @@ class WikiScraper
     data.css("div#mw-content-text p:nth-child(2)").text
   end
 
+  def scrape_quotes(name)
+    Nokogiri::HTML(open("https://en.wikiquote.org/wiki/#{name.gsub(" ", "_")}")).css("div#mw-content-text ul li b").collect{|q| q.text}
+  end
 end
